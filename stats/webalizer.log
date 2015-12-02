@@ -1,0 +1,14 @@
++ /usr/local/bin/webalizer_default -c /home/admin/.plugins/stats_control/wb_default.conf -c /etc/webalizer/cyclone-music-space.ru.conf /var/log/httpd/domains//cyclone-music-space.ru.log
+Webalizer V2.23-05 (FreeBSD 9.3-RELEASE-p24 amd64) Russian
+Используется учётный файл /var/log/httpd/domains//cyclone-music-space.ru.log (clf)
+Результат создаётся в /home/cyclonem/domains/cyclone-music-space.ru/stats
+Для отчётов используется имя хоста 'cyclone-music-space.ru'
+Читается файл состояния... webalizer.hist
+Читаются данные предыдущего запуска... webalizer.current
+Сохраняются данные текущего запуска... [10/04/2015 23:58:24]
+Генерируется отчёт за Октябрь 2015
+Сохраняется информация о состоянии...
+Генерируется общий отчёт
+2564 записей (1852 проигнорировано) за 1 секунд, 2564/sec
++ cp /home/cyclonem/domains/cyclone-music-space.ru/stats/index.html /home/cyclonem/domains/cyclone-music-space.ru/stats/webalizer.html
++ [ 0 -ne 0 ]

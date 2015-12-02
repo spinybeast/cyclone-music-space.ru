@@ -1,0 +1,86 @@
+<h3>Здесь Вы можете ознакомиться с нашим портфолио</h3>
+<p>Приятного прослушивания!</p><br/>
+<div class="text-center" ng-show="loading"><i class="fa fa-spinner spinner fa-3x"></i></div>
+<div ng-show="error" class="alert alert-danger" role="alert">
+    <i class="fa fa-2x fa-frown-o"></i>
+    Что-то пошло не так. Мы не смогли загрузить портфолио. Пожалуйста, попробуйте обновить страницу.
+    Если ошибка возникает снова, <a class="alert-link" href="#/contact">напишите нам!</a>
+</div>
+<!--<div class="col-md-4">-->
+<!--<span ng-repeat="tag in tags">-->
+<!--<input type="checkbox" id="{{tag.title}}" ng-model="tag.selected" ng-change="checkChange()"/>-->
+<!--<label for="{{tag.title}}">{{tag.title}}</label>-->
+<!--</span>-->
+<!--</div>-->
+<!--<div id="player" class="col-md-8"></div>-->
+<!--<script>-->
+<!--ToneDenReady = window.ToneDenReady || [];-->
+<!--ToneDenReady.push(function() {-->
+<!--// This is where all the action happens:-->
+<!--ToneDen.player.create({-->
+<!--dom: "#player",-->
+<!--eq: "waves",-->
+<!--skin: "light",-->
+<!--visualizerType: 'bars',-->
+<!--tracksPerArtist: 20,-->
+<!--urls: [-->
+<!--"https://soundcloud.com/tony-cyclonez"-->
+<!--]-->
+<!--});-->
+<!--});-->
+<!--</script>-->
+
+<div ng-show="success" id="portfolio">
+    <p>Отметьте интересующие вас стили</p>
+    <span ng-repeat="tag in tags" >
+    <input type="checkbox" class="tags" id="{{tag.title}}" onchange="checkTags()"/>
+    <label for="{{tag.title}}">{{tag.title}}</label>
+    </span>
+
+    <div class="tracks track{{track.id}}" data-tags="{{track.tags}}" ng-repeat="track in tracks">
+
+    </div>
+    <!--<iframe ng-repeat="track in tracks | filter:checkTags" width="100%" height="166" scrolling="no" frameborder="no"-->
+    <!--ng-src="{{getSongUrl(track.id)}}"></iframe>-->
+</div>
+<script>
+    $(function () {
+        $.getJSON('/portfolio', function (tracks) {
+            var time = 600;
+            $(tracks).each(function (i, track) {
+                setTimeout(function () {
+                    var iframe = $('<iframe></iframe>').prop({
+                        src: getSongUrl(track.id),
+                        width: '100%',
+                        height: 166,
+                        frameborder: 'none',
+                        'data-genre': track.genre
+                    });
+                    $('.track' + track.id).append(iframe);
+                }, time);
+                time += 600;
+            });
+        });
+    });
+    getSongUrl = function (id) {
+        return "https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" + id + "&color=259798&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=true&show_artwork=true";
+    };
+    checkTags = function () {
+        var tags = $('.tags:checked');
+        var tracks = $('.tracks');
+        tracks.show();
+
+        $.each(tracks, function (i, track) {
+            $.each(tags, function (i, tag) {
+                var proper = 0;
+                if (~$(track).data("tags").indexOf($(tag).prop('id'))) {
+                    proper += 1;
+                }
+                if (proper == 0) {
+                    $(track).hide();
+                }
+            });
+        });
+    };
+
+</script>

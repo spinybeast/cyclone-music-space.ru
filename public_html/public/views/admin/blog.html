@@ -1,0 +1,91 @@
+<h3>Блог
+<button class="btn btn-primary" ng-click="add=true">
+    <i class="fa fa-plus-circle"></i>&nbsp;Добавить
+</button>
+</h3>
+<form ng-submit="submitArticle();" name="blogForm" class="text-center" ng-show="add">
+    <h4 class="text-primary form-group">Добавить статью</h4>
+
+    <div class="col-md-12">
+        <div flow-init
+             flow-file-added="!!{png:1,gif:1,jpg:1,jpeg:1}[$file.getExtension()]"
+             flow-files-submitted="$flow.upload()"
+             flow-file-success="uploader.setPhoto($flow, $file, $message)">
+            <div class="form-group">
+                <img class="img-rounded img-responsive avatar-preview" ng-hide="$flow.files.length"
+                     src="../../img/avatars/noavatar.png"/>
+                <img class="img-rounded img-responsive avatar-preview" ng-show="$flow.files.length"
+                     flow-img="$flow.files[0]"/>
+            </div>
+            <div>
+                <button type="button" class="btn btn-default" ng-hide="$flow.files.length" flow-btn
+                        flow-attrs="{accept:'image/*'}">Загрузить изображение
+                </button>
+                <button type="button" class="btn btn-default" ng-show="$flow.files.length" flow-btn
+                        flow-attrs="{accept:'image/*'}">Изменить
+                </button>
+                <button type="button" class="btn btn-danger" ng-show="$flow.files.length"
+                        ng-click="$flow.cancel(); uploader.setNoPhoto();">Отмена
+                </button>
+            </div>
+        </div>
+        <div class="form-group">
+            <input required="required" type="text" class="form-control" name="title" ng-model="articleData.title"
+                   placeholder="Название">
+        </div>
+        <select name="category" ng-model="articleData.category" required="required">
+            <option value="1">Музыка</option>
+            <option value="2">Путешествия</option>
+        </select>
+        <div class="editor" text-angular text-angular-name="blog" ta-bind ng-model="articleData.text"></div>
+        <div class="form-group text-right">
+            <button type="submit" class="btn btn-primary">
+                <i class="fa fa-newspaper-o"></i>&nbsp;Отправить
+            </button>
+        </div>
+    </div>
+</form>
+
+<p class="text-center" ng-show="loading"><i class="fa spinner fa-spinner fa-3x"></i></p>
+
+<div class="article" ng-hide="loading" ng-repeat="article in articles">
+    <form editable-form name="editableForm" onaftersave="updateArticle(article)">
+        <h4 editable-text="article.title" e-name="title" e-required>{{ article.title }} <small>{{ article.created_at }}</small></h4>
+        <span editable-select="article.category" e-ng-options="s.value as s.text for s in categories">
+            <b>Категория:</b> <span class="text-primary"><i>{{ article.category_text }}</i></span>
+        </span>
+        <img ng-show="article.img" ng-src="../../img/articles/{{ article.img }}" alt="" class="img-responsive" width="300"/>
+        <p>
+        <div ng-show="!editableForm.$visible" ng-bind-html="article.preview"></div>
+        <div ng-show="editableForm.$visible" class="editor" text-angular text-angular-name="blog" ng-model="article.text"></div>
+        </p>
+        <div class="buttons">
+            <button type="button" class="btn btn-primary" ng-click="editableForm.$show();"
+                    ng-show="!editableForm.$visible">
+                <i class="fa fa-edit"></i> Редактировать
+            </button>
+            <span ng-show="editableForm.$visible">
+                <button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
+                    <i class="fa fa-check"></i> Сохранить
+                </button>
+                <button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting"
+                        ng-click="editableForm.$cancel()">
+                    <i class="fa fa-close"></i> Отмена
+                </button>
+            </span>
+            <button ng-really-click="deleteArticle(article.id)" ng-really-message="Точно удалить?"
+                    class="btn btn-danger">
+                <i class="fa fa-ban"></i> Удалить
+            </button>
+            <button ng-show="!{{ article.published }}" ng-click="publishArticle(article)"
+                    class="btn btn-success">
+                <i class="fa fa-bell-o"></i> Опубликовать
+            </button>
+            <button ng-show="{{ article.published }}" ng-click="unPublishArticle(article)"
+                    class="btn btn-warning">
+                <i class="fa fa-bell-slash-o"></i> Не публиковать
+            </button>
+        </div>
+    </form>
+    <hr/>
+</div>

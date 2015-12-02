@@ -1,0 +1,14 @@
+{
+  "name": "toneden-sdk",
+  "homepage": "https://github.com/ToneDen/toneden-sdk",
+  "_release": "79487b89fa",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "79487b89fad45b92e8bd2adb9f168d1b2e5d4f41"
+  },
+  "_source": "https://github.com/ToneDen/toneden-sdk.git",
+  "_target": "*",
+  "_originalSource": "https://github.com/ToneDen/toneden-sdk.git",
+  "_direct": true
+}

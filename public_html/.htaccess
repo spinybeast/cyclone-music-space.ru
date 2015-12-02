@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteCond %{REQUEST_URI} !^laravel
+RewriteRule ^(.*)$ public/$1 [L]
+<Limit POST PUT DELETE>
+  Allow from all
+</Limit>
