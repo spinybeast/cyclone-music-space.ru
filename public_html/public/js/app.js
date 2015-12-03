@@ -18,19 +18,19 @@ var cycloneApp = angular.module('cycloneApp', [
 
 cycloneApp.run(function($rootScope, $location, Article) {
     $rootScope.$on('$routeChangeSuccess', function(e, current, pre) {
-        console.log(current);
         $rootScope.page = $location.path();
         $rootScope.title = current.$$route.title;
     });
-    Article.published().success(function (data) {
-        $.each(data, function(index, article) {
-            if (article.category == 1 && !$rootScope.article1) {
-                $rootScope.article1 = article;
-            } else if (article.category == 2 && !$rootScope.article2) {
-                $rootScope.article2 = article;
-            }
-        });
-    });
+
+    //Article.published().success(function (data) {
+    //    $.each(data, function(index, article) {
+    //        if (article.category == 1 && !$rootScope.article1) {
+    //            $rootScope.article1 = article;
+    //        } else if (article.category == 2 && !$rootScope.article2) {
+    //            $rootScope.article2 = article;
+    //        }
+    //    });
+    //});
 });
 
 cycloneApp.config(['$routeProvider',

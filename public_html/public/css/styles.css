@@ -12,7 +12,7 @@
     font-family: dungeon;
     font-style: normal;
     font-weight: 400;
-    src: url(fonts/dungeon-webfont.eot?#iefix) format(embedded-opentype), url(fonts/dungeon-webfont.woff2) format(woff2), url(fonts/dungeon-webfont.woff) format(woff), url(fonts/dungeon-webfont.ttf) format(truetype);
+    src: url(fonts/dungeon-webfont.eot?#iefix) format('embedded-opentype'), url(fonts/dungeon-webfont.woff2) format('woff2'), url(fonts/dungeon-webfont.woff) format('woff'), url(fonts/dungeon-webfont.ttf) format('truetype');
 }
 
 body {
@@ -237,10 +237,10 @@ textarea.ng-valid, input.ng-valid {
 
 .logo {
     color: #EAEAEA;
-    padding: 0 25px;
+    padding: 9px 25px;
     text-align: center;
     font-size: 14px;
-    background: url(../img/kp_back.png) 9px 0 no-repeat;
+    background: url(../img/kp_back.png) 9px 8px no-repeat;
 }
 
 .logo h1 {
@@ -269,13 +269,13 @@ textarea.ng-valid, input.ng-valid {
 
 .modal-content .container {
     max-width: 1000px;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.8);
     padding: 20px 30px 0;
 }
 
 .modal-content .content-angles {
     max-width: 940px;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.8);
     width: calc(100% - 60px);
     margin: 0 auto;
     position: relative;
@@ -288,8 +288,8 @@ textarea.ng-valid, input.ng-valid {
     right: -30px;
     bottom: 0;
     border: 15px solid transparent;
-    border-left: 15px solid rgba(255, 255, 255, 0.7);
-    border-top: 15px solid rgba(255, 255, 255, 0.7);
+    border-left: 15px solid rgba(255, 255, 255, 0.8);
+    border-top: 15px solid rgba(255, 255, 255, 0.8);
 }
 
 .modal-content .content-angles:before {
@@ -298,8 +298,8 @@ textarea.ng-valid, input.ng-valid {
     left: -30px;
     bottom: 0;
     border: 15px solid transparent;
-    border-right: 15px solid rgba(255, 255, 255, 0.7);
-    border-top: 15px solid rgba(255, 255, 255, 0.7);
+    border-right: 15px solid rgba(255, 255, 255, 0.8);
+    border-top: 15px solid rgba(255, 255, 255, 0.8);
 }
 
 .modal-content .content-header {
@@ -571,7 +571,7 @@ textarea.ng-valid, input.ng-valid {
 }
 
 @media (max-width: 820px) {
-    .nav-container {
+    .nav-container, .logo {
         background: none;
     }
     .navbar-nav {
