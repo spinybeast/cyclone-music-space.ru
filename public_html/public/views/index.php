@@ -212,7 +212,7 @@
     <div class="copy row-fluid">
         <div class="container">
             <div class="text-left col-md-6">
-                &copy; <?= date('Y') ?> Cyclone Music Space online studio <br/>
+                &copy; <?= date('Y') ?> Cyclone Music Space<br/>
                 Designed by <a class="spiny" href="http://rain-studio.com/" target="_blank">Rain GS</a><br/>
                 Developed by <a class="spiny" href="https://vk.com/spiny.beast" target="_blank">spiny.beast</a><br/>
             </div>
