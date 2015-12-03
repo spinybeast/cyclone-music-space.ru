@@ -80,7 +80,7 @@
         </div>
     </nav>
     <div class="container" style="margin-top: 16px;">
-        <div class="col-md-6 hidden-xs hidden-sm nopadding">
+        <div class="col-md-6 hidden-xs hidden-sm nopadding" style="margin: 0 -13px 0 13px;">
             <div class="carousel-border">
                 <div class="owl-carousel">
                     <div>
@@ -134,10 +134,9 @@
                     - Вам нужна хитовая песня? Мы знаем секреты хорошего хита.<br/>
                     - Креативный и уникальный подход к каждому заказу. Мы против штампов. Мы за творчество!<br/>
                     - Мы внимательно прислушиваемся к Вашим пожеланиям. <br/>
-                    - Мы можем подстроиться практически под любой бюджет. <br/>
                     Ваши идеи + Наша реализация = Результат, которым Вы довольны.
                 </p>
-                <button type="submit" class="btn btn-link" style="margin-top: 7px;">
+                <button type="submit" class="btn btn-link" style="margin-top: -7px;">
                     <a href="#/about#content">Подробнее...</a>
                 </button>
             </div>

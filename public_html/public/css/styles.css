@@ -38,7 +38,7 @@ hr {
 }
 
 html {
-    background: #080B0D url(../img/back.png) center top no-repeat fixed;
+    background: #040607 url(../img/back.png) center top no-repeat fixed;
 }
 
 textarea {
@@ -239,14 +239,14 @@ textarea.ng-valid, input.ng-valid {
     color: #EAEAEA;
     padding: 0 25px;
     text-align: center;
-    border: 1px solid #3C777E;
-    font-size: 14px
+    font-size: 14px;
+    background: url(../img/kp_back.png) 9px 0 no-repeat;
 }
 
 .logo h1 {
     font-family: dungeon;
     font-size: 30px;
-    margin-top: 24px;
+    padding-top: 10px;
     margin-bottom: 0;
     text-shadow: 0px 0px 2px rgba(255, 255, 255, 1);
 }
@@ -314,7 +314,8 @@ textarea.ng-valid, input.ng-valid {
     border-top: 1px solid #3C777E;
     padding-top: 10px;
     height: 31px;
-    width: calc(100% - 60px)
+    width: calc(100% - 60px);
+    max-width: 940px;
 }
 
 .modal-content .content-header-bottom {
@@ -358,7 +359,7 @@ textarea.ng-valid, input.ng-valid {
 
 .navbar-brand img {
     margin-top: -47px;
-    margin-left: -50px;
+    margin-left: -30px;
 }
 
 .navbar-header.pull-left {
@@ -368,13 +369,15 @@ textarea.ng-valid, input.ng-valid {
 .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
     background: none;
 }
-
+.nav-container {
+    background: url(../img/menu_back.png) 50px 0 no-repeat;
+}
 .navbar-nav {
     float: none;
-    border-top: 1px solid #3C777E;
-    border-bottom: 1px solid #3C777E;
+    background: url(../img/menu_text_back.png) 115px 25px no-repeat;
     margin: 32px auto;
-    width: calc(100% - 60px);
+    padding-bottom: 3px;
+    /*width: calc(100% - 60px);*/
 }
 
 .navbar-nav > li > a {
@@ -568,8 +571,12 @@ textarea.ng-valid, input.ng-valid {
 }
 
 @media (max-width: 820px) {
+    .nav-container {
+        background: none;
+    }
     .navbar-nav {
         margin: 0;
+        background: none;
     }
 
     .navbar-nav > li {
