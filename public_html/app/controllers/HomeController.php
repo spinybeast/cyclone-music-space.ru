@@ -3,6 +3,12 @@
 class HomeController extends BaseController
 {
 
+    public function index($language = 'ru')
+    {
+        View::share('lang', $language);
+        return View::make('index');
+    }
+    
     public function showLogin()
     {
         return View::make('admin.login');
@@ -31,7 +37,6 @@ class HomeController extends BaseController
             } else {
                 return Redirect::to('login')->withErrors(array('badAuth' => 'Неверный логин или пароль'));
             }
-
         }
     }
 }

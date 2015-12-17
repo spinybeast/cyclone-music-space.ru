@@ -37,44 +37,44 @@ cycloneApp.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider.
             when('/about', {
-                templateUrl: 'views/partials/about.html',
-                title: 'О нас'
+                templateUrl: '/views/partials/' + lang + '/about.html',
+                title: lang == 'en' ? 'About' : 'О нас'
             }).
             when('/services', {
-                templateUrl: 'views/partials/services.html',
-                title: 'Услуги'
+                templateUrl: '/views/partials/' + lang + '/services.html',
+                title: lang == 'en' ? 'Services' : 'Услуги'
             }).
             when('/prices', {
-                templateUrl: 'views/partials/prices.html',
-                title: 'Цены'
+                templateUrl: '/views/partials/' + lang + '/prices.html',
+                title: lang == 'en' ? 'Prices' : 'Цены'
             }).
             when('/portfolio', {
-                templateUrl: 'views/partials/portfolio.html',
+                templateUrl: '/views/partials/' + lang + '/portfolio.html',
                 controller: 'portfolioController',
-                title: 'Портфолио'
+                title: lang == 'en' ? 'Portfolio' : 'Портфолио'
             }).
             when('/contact', {
-                templateUrl: 'views/partials/contact.html',
-                title: 'Контакты'
+                templateUrl: '/views/partials/' + lang + '/contact.html',
+                title: lang == 'en' ? 'Contact' : 'Контакты'
             }).
             when('/work-scheme', {
-                templateUrl: 'views/partials/work-scheme.html',
-                title: 'Схема работы'
+                templateUrl: '/views/partials/' + lang + '/work-scheme.html',
+                title: lang == 'en' ? 'Work scheme' : 'Схема работы'
             }).
             when('/reviews', {
-                templateUrl: 'views/partials/reviews.html',
+                templateUrl: '/views/partials/' + lang + '/reviews.html',
                 controller: 'reviewsController',
-                title: 'Отзывы'
+                title: lang == 'en' ? 'Reviews' : 'Отзывы'
             }).
             when('/blog', {
-                templateUrl: 'views/partials/blog.html',
+                templateUrl: '/views/partials/' + lang + '/blog.html',
                 controller: 'blogController',
-                title: 'Блог'
+                title: lang == 'en' ? 'Blog' : 'Блог'
             }).
             when('/blog/:id', {
-                templateUrl: 'views/partials/blog_item.html',
+                templateUrl: '/views/partials/' + lang + '/blog_item.html',
                 controller: 'blogItemController',
-                title: 'Блог'
+                title: lang == 'en' ? 'Article' : 'Блог'
             }).
             otherwise({
                 redirectTo: '/services'

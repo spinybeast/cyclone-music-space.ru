@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return View::make('index');
-});
+Route::get('/{lang?}', array('uses' => 'HomeController@index'))->where(['lang' => 'ru|en']);
 
 Route::group(array('before' => 'auth'), function () {
     Route::get('admin', function () {

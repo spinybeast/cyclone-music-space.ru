@@ -5,23 +5,9 @@
     <meta name="generator" content="Bootply"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <meta name="Keywords"
-          content="Удаленная запись, midi-партии, миди-партии, запись инструментов, звук барабанов, звук гитары,
-          аранжировка, аранжировка под ключ, композиция, структура композиции, подбор инструментов, композиция под ключ,
-          песня под ключ, полная аранжировка, частичная аранжировка, сочинение песни, сочинение стихов, сочинение музыки,
-          сочинение партий, сочинение партий инструмента, тюнинг вокала, монтаж вокала, сведение песни, мастеринг песни,
-          сведение композиции, мастеринг композиции, изготовление аудиороликов, озвучивание аудиороликов, аудиореклама,
-          джинглы, jingle, jingles, написание джинглов, музыкальное поздравление, песня в подарок, песня к торжеству,
-          заказ песни к торжеству, песня к свадьбе, песня ко дню рождения, гимны, корпоративные гимны, написание гимна,
-          фанфары, отбивки, отбивка, музыка для ВИА, песни для ВИА, купить песни для ВИА, заказать песню, сайт под ключ,
-          страница вконтакте под ключ, оформление страницы вконтакте под ключ"/>
+          content="<?= Config::get('text/' . $lang . '.keywords')?>"/>
     <meta name="Description"
-          content="Саундтреки к играм и фильмам, саунд-дизайн, аранжировки - это наша работа.
-          Миссией нашего проекта является воплощение Ваших идей, где бы вы не находились. Для этого проект
-          CYCLONE MUSIC SPACE задумывался и реализовывался именно как онлайн-студия. У нас работают только
-          узконаправленные специалисты, каждый из которых опытный мастер своего дела. Каждый из нас сделает всё для того,
-          чтобы Ваши идеи стали реальностью в самых смелых воплощениях. Для нас очень важно, чтобы Вам нравилось то,
-          что мы делаем. Для этого мы будем работать вместе. От вас потребуются ваши идеи и фантазия, а мы, в свою
-          очередь, реализуем задуманное."/>
+          content="<?= Config::get('text/' . $lang . '.description')?>"/>
     <title>Cyclone Music Space</title>
     <link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../vendor/bootstrap/dist/css/bootstrap-social.css">
@@ -50,31 +36,11 @@
                     <li class="hidden-xs navbar-brand">
                         <?= HTML::image('img/logo.png', $alt = "Cyclone Music Space", $attributes = array()) ?>
                     </li>
-                    <li>
-                        <a is-active-nav href="#/about">О нас</a>
-                    </li>
-                    <!--                <li>-->
-                    <!--                    <a is-active-nav href="#/blog">Статьи</a>-->
-                    <!--                </li>-->
-                    <li>
-                        <a is-active-nav href="#/services">Услуги</a>
-                    </li>
-                    <li>
-                        <a is-active-nav href="#/work-scheme">Схема работы</a>
-                    </li>
-
-                    <li>
-                        <a is-active-nav href="#/prices">Цены</a>
-                    </li>
-                    <li>
-                        <a is-active-nav href="#/reviews">Отзывы</a>
-                    </li>
-                    <li>
-                        <a is-active-nav href="#/portfolio">Портфолио</a>
-                    </li>
-                    <li>
-                        <a is-active-nav href="#/contact">Контакты</a>
-                    </li>
+                    <?php foreach (Config::get('text/' . $lang . '.menu') as $name => $link) { ?>
+                        <li>
+                            <a is-active-nav href="#/<?php echo $link ?>"><?php echo $name ?></a>
+                        </li>
+                    <?php } ?>
                 </ul>
             </div>
         </div>
@@ -128,16 +94,10 @@
                     <h3>online studio</h3>
                 </noindex>
                 <p class="text-justify">
-                    Аранжировка в любых стилях, сведение, мастеринг, песня под ключ, музыкальное поздравление, написание
-                    партий любых инструментов, саундтреки к играм и фильмам, а также многое другое - это наша работа.
-                    <br/>
-<!--                    - Вам нужна хитовая песня? Мы знаем секреты хорошего хита.<br/>-->
-                    - Креативный и уникальный подход к каждому заказу. Мы против штампов. Мы за творчество!<br/>
-                    - Мы внимательно прислушиваемся к Вашим пожеланиям. <br/>
-                    Ваши идеи + Наша реализация = Результат, которым Вы довольны.
+                    <?= Config::get('text/' . $lang . '.header')?>
                 </p>
                 <button type="submit" class="btn btn-link" style="margin-top: -7px;">
-                    <a href="#/about#content">Подробнее...</a>
+                    <a href="#/about#content"><?= Config::get('text/' . $lang . '.more', 'Подробнее')?>...</a>
                 </button>
             </div>
         </div>
@@ -232,29 +192,11 @@
             </div>
         </div>
     </div>
-    <!--    <div class="text-center"><p>Если Вам понравился наш сайт, добавьте его в избранное и поделитесь в соцсетях <i-->
-    <!--                class="fa fa-smile-o"></i></p>-->
-    <!--        <script type="text/javascript">(function () {-->
-    <!--                if (window.pluso)if (typeof window.pluso.start == "function") return;-->
-    <!--                if (window.ifpluso == undefined) {-->
-    <!--                    window.ifpluso = 1;-->
-    <!--                    var d = document, s = d.createElement('script'), g = 'getElementsByTagName';-->
-    <!--                    s.type = 'text/javascript';-->
-    <!--                    s.charset = 'UTF-8';-->
-    <!--                    s.async = true;-->
-    <!--                    s.src = ('https:' == window.location.protocol ? 'https' : 'http') + '://share.pluso.ru/pluso-like.js';-->
-    <!--                    var h = d[g]('body')[0];-->
-    <!--                    h.appendChild(s);-->
-    <!--                }-->
-    <!--            })();</script>-->
-    <!--        <div class="pluso" data-background="transparent" data-options="big,round,line,horizontal,nocounter,theme=04"-->
-    <!--             data-services="google,odnoklassniki,twitter,linkedin,vkontakte,moimir,facebook"-->
-    <!--             data-url="http://cyclone-music-space.ru/"></div>-->
-    <!--        <br/>-->
-
 </footer>
 
-
+<script>
+    var lang = '<?php echo $lang?>';
+</script>
 <!--[if lt IE 9]>
 <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->

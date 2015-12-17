@@ -1,0 +1,41 @@
+<p class="text-center" ng-show="loading"><i class="fa spinner fa-spinner fa-3x"></i></p>
+<h3 ng-show="!articles.length">Статей пока нет...</h3>
+<div class="blog" ng-hide="loading || !articles.length">
+    <div class="col-md-6"><h3>Звук, который удивляет</h3></div>
+    <div class="col-md-6"><h3>Заметки музыканта</h3></div>
+
+
+    <div class="col-md-6" style="border-right: 2px solid rgba(39,94,105,0.88)!important;">
+
+        <div class="article" ng-hide="loading" ng-repeat="article in articles1">
+            <div class="title-area">
+                <a href="#/blog/{{article.id}}">
+                    <div class="caption">
+                        <p>{{ article.title }}</p>
+
+                        <p><h4>{{ article.created_at }}</h4></p>
+                        <p><span class="h5">Читать далее &#x2192;</span></p>
+                    </div>
+                    <img ng-show="article.img" ng-src="../../img/articles/{{ article.img }}" alt="" class="img-responsive"/>
+                </a></div>
+
+            <p class="text" ng-bind-html="article.preview"></p>
+        </div>
+    </div>
+    <div class="col-md-6">
+
+        <div class="article" ng-hide="loading" ng-repeat="article in articles2">
+            <div class="title-area">
+                <a href="#/blog/{{article.id}}">
+                    <div class="caption">
+                        <p>{{ article.title }}</p>
+
+                        <p><h4>{{ article.created_at }}</h4></p>
+                        <p><span class="h5">Читать далее &#x2192;</span></p>
+                    </div>
+                    <img ng-show="article.img" ng-src="../../img/articles/{{ article.img }}" alt="" class="img-responsive"/>
+                </a></div>
+            <p class="text" ng-bind-html="article.preview"></p>
+        </div>
+    </div>
+</div>

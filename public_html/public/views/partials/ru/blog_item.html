@@ -1,0 +1,30 @@
+<p class="text-center" ng-show="loading"><i class="fa spinner fa-spinner fa-3x"></i></p>
+
+<div class="article" ng-hide="loading">
+    <div class="title-area">
+        <div class="caption">
+            <p>{{ article.title }}</p>
+            <p><h3>{{ article.created_at }}</h3></p>
+            <a href="/#blog" class="h4">&#x2190; Блог</a>
+        </div>
+        <img ng-show="article.img" ng-src="../../img/articles/{{ article.img }}" alt="" class="img-responsive"/>
+    </div>
+
+    <div ta-bind ng-model="article.html" class="text"></div>
+    <hr/>
+    <div class="pull-left"><b>Поделиться:&nbsp;&nbsp;</b></div> <div class="yashare-auto-init"
+         data-yashareL10n="ru"
+         data-yashareType="big"
+         data-yashareQuickServices="vkontakte,facebook,twitter"
+         data-yashareTheme="counter"
+         data-yashareTitle="Статья: {{article.title}}"
+         data-yashareDescription="{{article.preview}}"
+         data-yashareImage="http://cyclone-music-space.ru/img/articles/{{ article.img }}"></div>
+    <br/><br/>
+    <div id="vk_comments"></div>
+    <br/>
+    <script type="text/javascript" src="//yastatic.net/share/share.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        VK.Widgets.Comments("vk_comments", {limit: 10, width: "700", attach: "*"});
+    </script>
+</div>
