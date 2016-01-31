@@ -54,11 +54,9 @@
             <div class="carousel-border">
                 <div class="owl-carousel">
                     <div>
-                        <a href="/#prices">
-                            <img class="img-responsive img-rounded" src="../img/banners/Аранжировка.jpg" alt=""/>
+                        <img class="img-responsive img-rounded" src="../img/banners/Аранжировка.jpg" alt=""/>
 
-                            <div class="caption">Аранжировки</div>
-                        </a>
+                        <div class="caption">Аранжировки</div>
                     </div>
                     <div>
                         <img class="img-responsive img-rounded" src="../img/banners/Песня%20под%20ключ.jpeg" alt=""/>

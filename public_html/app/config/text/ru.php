@@ -26,7 +26,7 @@ return array(
         'О нас' => 'about',
         'Услуги' => 'services',
         'Схема работы' => 'work-scheme',
-        'Цены' => 'prices',
+//        'Цены' => 'prices',
         'Отзывы' => 'reviews',
         'Портфолио' => 'portfolio',
         'Контакты' => 'contact',
