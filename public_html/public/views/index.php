@@ -22,6 +22,10 @@
 <body>
 <header>
     <nav class="navbar navbar-inverse container">
+        <div class="lang">
+            <a href="/" class="ru" title="Russian"></a>
+            <a href="/en" class="en" title="English"></a>
+        </div>
         <div class="navbar-header pull-left">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>

@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="../../vendor/bootstrap/dist/css/bootstrap.css">
     <style>
         body {background: none;}
-        .full {background: url('../../img/back.png') no-repeat top center fixed;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
+        .full {background: #040607 url('../../img/back.png') no-repeat top center fixed;-webkit-background-size: cover;-moz-background-size: cover;background-size: cover;-o-background-size: cover;}
     </style>
 </head>
 <body>
