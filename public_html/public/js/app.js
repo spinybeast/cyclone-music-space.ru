@@ -36,9 +36,9 @@ cycloneApp.run(function($rootScope, $location, Article) {
 cycloneApp.config(['$routeProvider',
     function ($routeProvider) {
         $routeProvider.
-            when('/about', {
+            when('/', {
                 templateUrl: '/views/partials/' + lang + '/about.html',
-                title: lang == 'en' ? 'About' : 'О нас'
+                title: lang == 'en' ? 'About' : ''
             }).
             when('/services', {
                 templateUrl: '/views/partials/' + lang + '/services.html',
@@ -77,7 +77,7 @@ cycloneApp.config(['$routeProvider',
                 title: lang == 'en' ? 'Article' : 'Блог'
             }).
             otherwise({
-                redirectTo: '/services'
+                redirectTo: '/'
             });
     }]);
 cycloneApp.config(['flowFactoryProvider',
