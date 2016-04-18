@@ -12,6 +12,9 @@ angular.module('PortfolioController', [])
             return $sce.trustAsResourceUrl("https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/" + id + "&color=259798&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=true&show_artwork=true");
         };
         $scope.showAll = true;
+        $scope.slashed = function(string) {
+            return string.replace(/_/g, '/')
+        };
         $scope.loadTracks = function (genre) {
             var container = $('#tracks_' + genre);
             container.toggleClass('hidden');
@@ -44,7 +47,7 @@ angular.module('PortfolioController', [])
 
                 tags.push(track.genre);
                 tags.forEach(function (tag) {
-                    tag = tag.toLowerCase().replace(/\s/g, '');
+                    tag = tag.toLowerCase().replace(/\s/g, '').replace(/\//g, '_');
                     if (tag.length) {
                         track.tags.push(tag);
                         if (allTracks[tag] == undefined) {
