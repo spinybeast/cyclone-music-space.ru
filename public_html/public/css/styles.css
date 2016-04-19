@@ -257,10 +257,11 @@ textarea.ng-valid, input.ng-valid {
 }
 .logo {
     color: #EAEAEA;
-    padding: 9px 25px;
+    padding: 0px 25px;
+    margin-top: -25px;
     text-align: center;
-    font-size: 14px;
-    background: url(../img/kp_back.png) 9px 8px no-repeat;
+    font-size: 15px;
+    /*background: url(../img/kp_back.png) 9px 8px no-repeat;*/
 }
 
 .logo h1 {
@@ -390,7 +391,7 @@ textarea.ng-valid, input.ng-valid {
     background: none;
 }
 .nav-container {
-    background: url(../img/menu_back.png) 50px 0 no-repeat;
+    /*background: url(../img/menu_back.png) 50px 0 no-repeat;*/
 }
 .navbar-nav {
     float: none;
@@ -405,7 +406,7 @@ textarea.ng-valid, input.ng-valid {
     text-shadow: 0px 0px 6px rgba(255, 255, 255, 1);
     line-height: 65px;
     text-transform: uppercase;
-    padding: 11px 10px;
+    padding: 11px 25px;
 }
 
 .navbar-nav > li > a:hover, .navbar-nav > li > a:focus, .navbar-nav > li.active > a {

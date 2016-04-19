@@ -49,8 +49,8 @@
             </div>
         </div>
     </nav>
-    <div class="container" style="margin-top: 16px;">
-        <div class="col-md-6 hidden-xs hidden-sm nopadding" style="margin: 0 -13px 0 13px;">
+    <div class="container">
+        <?php /*<div class="col-md-6 hidden-xs hidden-sm nopadding" style="margin: 0 -13px 0 13px;">
             <div class="carousel-border">
                 <div class="owl-carousel">
                     <div>
@@ -87,20 +87,21 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-6">
+        </div> */?>
+        <div class="col-md-12">
             <div class="logo">
                 <noindex>
                     <h1>Cyclone Music Space</h1>
 
                     <h3>online studio</h3>
                 </noindex>
-                <p class="text-justify">
+                <p class="text-justify" style="margin: 0 auto; width: 50%">
                     <?= Config::get('text/' . $lang . '.header')?>
                 </p>
                 <button type="submit" class="btn btn-link" style="margin-top: -7px;">
                     <a href="#/about#content"><?= Config::get('text/' . $lang . '.more', 'Подробнее')?>...</a>
                 </button>
+
             </div>
         </div>
     </div>

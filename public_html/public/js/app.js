@@ -40,14 +40,6 @@ cycloneApp.config(['$routeProvider',
                 templateUrl: '/views/partials/' + lang + '/about.html',
                 title: lang == 'en' ? 'About' : ''
             }).
-            when('/services', {
-                templateUrl: '/views/partials/' + lang + '/services.html',
-                title: lang == 'en' ? 'Services' : 'Услуги'
-            }).
-            when('/prices', {
-                templateUrl: '/views/partials/' + lang + '/prices.html',
-                title: lang == 'en' ? 'Prices' : 'Цены'
-            }).
             when('/portfolio', {
                 templateUrl: '/views/partials/' + lang + '/portfolio.html',
                 controller: 'portfolioController',
