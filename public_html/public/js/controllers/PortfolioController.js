@@ -48,7 +48,7 @@ angular.module('PortfolioController', [])
                 tags.push(track.genre);
                 tags.forEach(function (tag) {
                     tag = tag.toLowerCase().replace(/\s/g, '').replace(/\//g, '_');
-                    if (tag.length) {
+                    if (tag.length && tag != 'soundtrack') {
                         track.tags.push(tag);
                         if (allTracks[tag] == undefined) {
                             allTracks[tag] = [];
